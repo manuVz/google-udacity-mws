@@ -9,18 +9,37 @@ body,td,th,p{
 }
 body {
 	background-color: #fdfdfd;
-	margin: 0;
+  margin: 0;
 	position:relative;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
-	color: #333;
+  color: #333;
+  
 }
+
+/*inserito da me*/
+nav, a, button{
+min-width: 48px;
+min-height:48px;
+}
+img, embed, object, video {
+  max-width: 100%;
+}
+/*Fine inserimeto */
+/*li{
+  max-width: 100%;
+}*/
 a {
 	color: orange;
 	text-decoration: none;
 }
+/*Inserito da me per classe di prova */
+.centered{
+  text-align: center;
+}
+/* Fine */
 a:hover, a:focus {
 	color: #3397db;
 	text-decoration: none;
@@ -47,6 +66,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -57,21 +77,26 @@ nav {
 }
 nav h1 {
   margin: auto;
+  /* Inserito */
+  padding: 10px;
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: 16pt; /* prima 14pt*/
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+  
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    /*padding: 10px 40px 16px;*/
+    padding: 10px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    /*width: calc(50% - 80px);*/
+    max-width:100%;
 }
 
 /* Display list items side by side */
@@ -106,9 +131,16 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 50px;
+  height: 30%; /*50px*/
   background-color: #3397DB;
   align-items: center;
+  
+}
+/*Inserita classe clearfix*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 .filter-options h2 {
   color: white;
@@ -116,6 +148,8 @@ nav h1 a {
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
+  /* inserito */
+  padding-top:10px;
 }
 .filter-options select {
   background-color: white;
@@ -124,9 +158,11 @@ nav h1 a {
   font-size: 11pt;
   height: 35px;
   letter-spacing: 0;
-  margin: 10px;
+  margin: 10px 0px 10px 10px; /*10px*/
   padding: 0 10px;
-  width: 200px;
+  /*width: 125px;*/
+  width: 280px;
+  
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -136,16 +172,19 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  /*max-width: 100%; inserito da me */
 }
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px; /*prima margin:15px*/
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
   width: 270px;
+  /*width:90%;*/
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -174,9 +213,12 @@ nav h1 a {
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
+  font-size: 12pt;
   margin: 15px 0 0;
   padding: 8px 30px 10px;
+  /*padding-top: 25px;*/
+  /*width:100%;*/
+  
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
