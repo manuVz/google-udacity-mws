@@ -187,7 +187,7 @@ nav h1 a {
   /*margin-top: 15px;
   margin-bottom: 15px; prima margin:15px*/
   margin:10px;
-  min-height: 380px;
+  min-height: 350px;
   /*padding: 0 30px 25px;*/
   text-align: left;
   max-width: 300px;
@@ -195,28 +195,27 @@ nav h1 a {
   /*width:90%;*/
   
 }
-#restaurants-list li a::after{
-  content:"";
-  flex:left;
-}
 
-@media only screen and (max-width:650px){
-  #restaurant-list li{
-    /*max-width: 100%;*/*
-  }
-}
-@media only screen and (min-width:651px){
-  #restaurant-list li{
-    /*max-width: 50%;*/
-    /*margin-right: 50px;
-    margin-left: 50px;*/
+@media screen and (min-width:0px){
+  #restaurants-list li{
+    margin-top: 10px;
+    max-width: 80%;  
   }
   
 }
-@media only screen and (min-width: 970px){
-  #restaurant-list {
-    /*margin-right: auto;
-    margin-left: auto;*/
+@media screen and (min-width:695px){
+  #restaurants-list li{
+    margin: 10px;
+    min-width:300px;
+    max-width:300px;
+    
+  }
+  
+}
+@media screen and (min-width: 1019px){
+  #restaurants-list li {
+     margin-left: 5px;
+     margin-right: 5px;
   }
 }
 #restaurants-list .restaurant-img {
