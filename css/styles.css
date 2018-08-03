@@ -18,7 +18,18 @@ ul, li {
   color: #333;
   
 }
-
+.skip-link{
+  position: absolute;
+  top:-50px;
+  left: 0;
+  background: #82420d;
+  color: white;
+  padding: 8px;
+  z-index:100;
+}
+.skip-link:focus{
+  top:0;
+}
 /*Min width and height for tap links*/
 nav, a, button{
 min-width: 48px;
