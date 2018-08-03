@@ -81,6 +81,10 @@ window.initMap = () => {
     scrollwheel: false
   });
   updateRestaurants();
+  // Give a title to iframe
+  google.maps.event.addListenerOnce(self.map, 'idle', () =>{
+    document.getElementsByTagName('iframe')[0].title = 'Map of resturant locations';
+  });
 }
 
 /**
@@ -157,6 +161,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = img500;
   // Insert srcset attribute
   image.srcset = `${srcset300},${srcset500},${srcset600},${srcset800}`;
+  image.alt = `${restaurant.name}`;
   li.append(image);
 
   const divtext = document.createElement('div');
@@ -178,9 +183,9 @@ createRestaurantHTML = (restaurant) => {
   const div = document.createElement('div');
   div.className ='restaurant-button';
   li.append(div);
-  const more = document.createElement('a');
+  const more = document.createElement('button');
   more.innerHTML = 'View Details';
-  more.href = DBHelper.urlForRestaurant(restaurant);
+  more.addEventListener("click", () => {window.location.href = DBHelper.urlForRestaurant(restaurant);});
   div.append(more)
 
   return li

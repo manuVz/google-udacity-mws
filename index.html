@@ -12,29 +12,30 @@
 </head>
 
 <body>
-  <header>
+  <header role="banner">
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
   
-  <main id="maincontent">
-    <section id="map-container">
+  <main id="maincontent" role="main">
+    <section id="map-container" role="application" aria-label="Google Maps">
       <div id="map"></div>
     </section>
     <section>
       <div class="filter-options">
         <h2>Filter Results</h2>
         <div class="filter-select">
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <select id="neighborhoods-select" name="neighborhoods" role="combobox" aria-label='Neighborhoods filter' onchange="updateRestaurants()">
             <option value="all">All Neighborhoods</option>
           </select>
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+
+          <select id="cuisines-select" name="cuisines" role="combobox" aria-label='filter cuisines' onchange="updateRestaurants()">
             <option value="all">All Cuisines</option>
           </select>
         </div>
       </div>    
-      <ul id="restaurants-list"></ul>
+      <ul id="restaurants-list" role="list" aria-label="Restaurants List"></ul>
   
     </section>
   </main>
@@ -44,7 +45,7 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAReKZIvj4IGz7ngcSkDtqAHrY9K-yUpK4&libraries=places&callback=initMap"></script>
 
 
-  <footer id="footer">
+  <footer id="footer" role="contentinfo">
     Copyright (c) 2017 
     <a href="/">
       <strong>Restaurant Reviews</strong>
