@@ -140,8 +140,25 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  
+  //Insert the correct name of image for responsive image
+  const img= DBHelper.imageUrlForRestaurant(restaurant);
+  const img2 = img.split('.');
+  const img300 = `${img2[0]}-300_1x.${img2[1]}`;
+  const img500 = `${img2[0]}-500_1x.${img2[1]}`;
+  const img600 = `${img2[0]}-600_2x.${img2[1]}`;
+  const img800 = `${img2[0]}-800_2x.${img2[1]}`;
+  // Create sring for srcset attribute
+  const srcset300 = `${img300} 300w`;
+  const srcset500 = `${img500} 500w`;
+  const srcset600 = `${img600} 600w`;
+  const srcset800 = `${img800} 800w`;
+  // Default image resolution
+  image.src = img500;
+  // Insert srcset attribute
+  image.srcset = `${srcset300},${srcset500},${srcset600},${srcset800}`;
   li.append(image);
+
   const divtext = document.createElement('div');
   divtext.className = 'restaurant-text';
   li.append(divtext);

@@ -53,11 +53,26 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
-
+  address.innerHTML = restaurant.address; 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.className = 'restaurant-img';
+
+  const img = DBHelper.imageUrlForRestaurant(restaurant);
+  const img2 = img.split('.'); 
+  // Insert correct name of images in srcset attribute
+  const img300 = `${img2[0]}-300_1x.${img2[1]}`;
+  const img500 = `${img2[0]}-500_1x.${img2[1]}`;
+  const img600 = `${img2[0]}-600_2x.${img2[1]}`;
+  const img800 = `${img2[0]}-800_2x.${img2[1]}`;
+  // Create strings for srcset attribute
+  const srcset300 = `${img300} 300w`;
+  const srcset500 = `${img500} 500w`;
+  const srcset600 = `${img600} 600w`;
+  const srcset800 = `${img800} 800w`;
+  image.src = img500;
+  //Create srcset attribute
+  image.srcset = `${srcset300},${srcset500},${srcset600},${srcset800}`;
+  
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
