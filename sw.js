@@ -11,6 +11,7 @@ self.addEventListener('install', event =>{
            'css/styles.css',
            'js/main.js',
            'js/restaurant_info.js',
+           'js/dbhelper.js',
            'js/sw_register.js',
            '/data/restaurants.json'  
         ]).catch( err =>{
@@ -18,4 +19,16 @@ self.addEventListener('install', event =>{
         });
     })
   );
+});
+
+self.addEventListener('fetch', event =>{
+    let request = event.request;
+    event.respondWith(
+        caches.match(request)
+        .then(response => {
+            return response || fetch(request);
+        }).catch(err =>{
+            console.log(`Failed ${err}`);
+        })
+    );
 });
