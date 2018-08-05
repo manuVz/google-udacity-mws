@@ -207,6 +207,7 @@ createRestaurantHTML = (restaurant) => {
   li.append(div);
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
+  more.setAttribute('aria-label',`View Details of ${restaurant.name} restaurant`);
   more.addEventListener("click", () => {window.location.href = DBHelper.urlForRestaurant(restaurant);});
   div.append(more)
 
